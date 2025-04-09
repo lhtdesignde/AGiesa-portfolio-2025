@@ -1,0 +1,31 @@
+.bToast {
+  :global {
+    // stylelint-disable-next-line selector-class-pattern
+    .Toastify__toast {
+      --toastify-toast-padding: 16px;
+      --toastify-toast-width: 320px;
+      --toastify-toast-bd-radius: 0;
+      --toastify-font-family: var(--font-primary);
+      --toastify-toast-background: var(--color-background);
+      --toastify-text-color-light: var(--color-on-background);
+      --toastify-color-progress-light:
+        linear-gradient(
+          to left,
+          var(--color-border),
+          var(--color-primary),
+          var(--color-primary-light)
+        );
+    }
+
+    // stylelint-disable-next-line selector-class-pattern
+    .Toastify__close-button {
+      opacity: 1;
+      color: var(--color-on-background);
+
+      > svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

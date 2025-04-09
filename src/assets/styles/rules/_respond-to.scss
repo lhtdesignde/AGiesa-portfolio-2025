@@ -1,0 +1,40 @@
+//
+// breakpoint mixin with optional fallback
+// --------------------
+//
+@use "sass:list";
+@use "sass:meta";
+@use "../variables/breakpoints";
+
+@mixin respond-to($medias...) {
+  $breakpoints-length: list.length(breakpoints.$respond-to-breakpoints);
+
+  @each $media in $medias {
+    $had-a-hit: false;
+
+    @for $i from 1 through $breakpoints-length {
+      $breakpoint: list.nth(breakpoints.$respond-to-breakpoints, $i);
+
+      @if $media == list.nth($breakpoint, 1) {
+        $definition: list.nth($breakpoint, 2);
+        $had-a-hit: true;
+
+        @media #{$definition} {
+          @content;
+        }
+      }
+    }
+    // if these variables are not defined, skip generating fallback and warn
+    @if meta.global-variable-exists(respond-to-no-mediaqueries-fallback) and meta.global-variable-exists(respond-to-fallback-class) {
+      @if $media == $respond-to-no-mediaqueries-fallback {
+        .#{$respond-to-fallback-class} & {
+          @content;
+        }
+      }
+    }
+
+    @if $had-a-hit == false {
+      @warn "Media #{media} not found!";
+    }
+  }
+}

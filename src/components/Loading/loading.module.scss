@@ -1,0 +1,37 @@
+@use "../../assets/styles/rules/respond-to";
+
+.bLoading {
+  @include respond-to.respond-to(desktop) {
+    &:global(.xLeftPadding) {
+      padding-left: 25%;
+    }
+  }
+
+  & {
+    display: flex;
+    grid-area: loading;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .svg {
+    width: auto;
+
+    :global {
+      animation: pulse 1.5s infinite;
+    }
+
+    .svgPath {
+      :global {
+        animation: fade 1.5s infinite;
+      }
+    }
+  }
+
+  .message {
+    margin-top: 24px;
+    font-size: var(--font-size-large);
+    line-height: var(--line-height-large);
+  }
+}

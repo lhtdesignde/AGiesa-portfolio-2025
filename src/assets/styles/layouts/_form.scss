@@ -1,0 +1,139 @@
+// stylelint-disable selector-class-pattern
+@use "../rules/respond-to";
+@use "../rules/helpers";
+
+.form {
+  @include respond-to.respond-to(desktop) {
+    width: 50%;
+  }
+
+  @include respond-to.respond-to(tablet) {
+    width: 60%;
+  }
+
+  @include respond-to.respond-to(mobile) {
+    width: 90%;
+  }
+
+  & {
+    box-sizing: border-box;
+    display: flex;
+    place-content: center center;
+    flex-direction: column;
+    min-width: 200px;
+    max-width: 600px;
+    margin: 16px 0;
+    padding-block-end: 24px;
+  }
+
+  &Center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 32px;
+  }
+
+  .input {
+    margin: 12px 0 8px;
+    border: 1px solid var(--color-on-background);
+    padding: 12px 24px;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+
+    &:hover,
+    &:focus {
+      border: 1px solid var(--color-primary);
+    }
+
+    &:read-only:not(div) {
+      background-color: var(--color-primary-light);
+    }
+
+    &.xShort {
+      width: 100px;
+    }
+
+    &.textarea {
+      min-height: 170px;
+      resize: vertical;
+    }
+  }
+
+  .oneLineWrapper {
+    box-sizing: border-box;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    width: 100%;
+    margin: 12px 0;
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    .input {
+      margin: 0;
+
+      &.xShort {
+        flex-shrink: 0;
+        width: 100px;
+      }
+
+      &:not(.xShort) {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  &.xWide {
+    width: 100%;
+
+    .input:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .inlineError {
+    position: relative;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-error);
+  }
+
+  .checkboxWrapper {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-block: 8px;
+
+    .checkLabel {
+      position: relative;
+      display: flex;
+      font-size: var(--font-size-medium);
+      line-height: var(--line-height-medium);
+      cursor: pointer;
+    }
+
+    .checkbox {
+      width: 16px;
+      height: 16px;
+      font-size: var(--font-size-medium);
+      line-height: var(--line-height-medium);
+
+      &:checked {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  .submitButton {
+    align-self: flex-end;
+    margin-top: 24px;
+  }
+
+  .nextToSubmitLink {
+    @include helpers.keyboardfocusText;
+
+    align-self: flex-end;
+    margin-top: 16px;
+    font-size: var(--font-size-medium);
+    line-height: var(--line-height-medium);
+  }
+}

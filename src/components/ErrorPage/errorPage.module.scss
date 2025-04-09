@@ -1,0 +1,30 @@
+.bErrorPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid var(--color-primary);
+  padding: 56px 40px;
+  text-align: center;
+
+  .headline {
+    margin-bottom: 24px;
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-black);
+    line-height: var(--line-height-large);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .description,
+  .error {
+    margin-bottom: 24px;
+    font-size: var(--font-size-medium);
+    line-height: var(--line-height-medium);
+  }
+
+  .error {
+    margin-bottom: 0;
+    font-weight: var(--font-weight-bold);
+    font-style: normal;
+  }
+}

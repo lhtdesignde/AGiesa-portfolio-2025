@@ -1,0 +1,98 @@
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(.5);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes activation {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade {
+  0% {
+    fill: var(--color-on-background);
+  }
+
+  50% {
+    fill: var(--color-primary);
+  }
+
+  100% {
+    fill: var(--color-on-background);
+  }
+}
+
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes grow33 {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 33.33%;
+  }
+}
+@keyframes grow66 {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 66.66%;
+  }
+}
+@keyframes grow100 {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}

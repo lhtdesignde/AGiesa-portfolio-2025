@@ -1,0 +1,24 @@
+$break-mobile-min: 320 !default;
+$break-mobile-max: 576 !default;
+$break-tablet-min: 577 !default;
+$break-tablet-max: 1024 !default;
+$break-desktop-min: 1025 !default;
+
+// fallback settings: if not active respond-to won't render a fallback
+// $respond-to-no-mediaqueries-fallback: desktop;
+// $respond-to-fallback-class: ie8; // for desktop mediaqueries content
+// touch-coarse CSS4: https://caniuse.com/#feat=css-media-interaction
+
+// respond-to mediaqueries range
+$respond-to-breakpoints: (
+  desktop: "(min-width:" + $break-desktop-min + "px)",
+  tablet-down: "(max-width:" + $break-tablet-max + "px)",
+  tablet: "(min-width:" + $break-tablet-min + "px) and (max-width:" + $break-tablet-max + "px)",
+  mobile: "(max-width:" + $break-mobile-max + "px)",
+  touch-coarse: "(pointer:coarse)"
+);
+$breakpoints: (
+  "desktop": $break-desktop-min,
+  "tablet": $break-tablet-max,
+  "mobile": $break-mobile-max
+);

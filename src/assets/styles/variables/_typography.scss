@@ -1,0 +1,64 @@
+@use "../rules/helpers";
+
+$root-font-size: 16; // if this is changed, change in convertorem
+
+$font-primary: "Lexend", sans-serif !default;
+$xsmall-font-size: helpers.convertorem(12) !default;
+$xsmall-line-height: helpers.convertorem(20) !default;
+$small-font-size: helpers.convertorem(14) !default;
+$small-line-height: helpers.convertorem(20) !default;
+$base-font-size: helpers.convertorem(16) !default;
+$base-line-height: helpers.convertorem(22) !default;
+$medium-font-size: helpers.convertorem(18) !default;
+$medium-line-height: helpers.convertorem(24) !default;
+$large-font-size: helpers.convertorem(22) !default;
+$large-line-height: helpers.convertorem(28) !default;
+$xlarge-font-size: helpers.convertorem(30) !default;
+$xlarge-line-height: helpers.convertorem(36) !default;
+$xxlarge-font-size: helpers.convertorem(40) !default;
+$xxlarge-line-height: helpers.convertorem(48) !default;
+$xxxlarge-font-size: helpers.convertorem(48) !default;
+$xxxlarge-line-height: helpers.convertorem(56) !default;
+$header-headline: helpers.convertorem(74) !default;
+
+// icons
+$base-font-size-icon: helpers.convertorem(24) !default;
+$small-font-size-icon: helpers.convertorem(18) !default;
+
+// font weights
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-black: 900 !default;
+$font-family: (
+  "primary": $font-primary,
+);
+$font-weights: (
+  "normal": $font-weight-normal,
+  "medium": $font-weight-medium,
+  "semibold": $font-weight-semibold,
+  "bold": $font-weight-bold,
+  "black": $font-weight-black
+);
+$typo-sizes: (
+  "font-size-xsmall": $xsmall-font-size,
+  "line-height-xsmall": $xsmall-line-height,
+  "font-size-small": $small-font-size,
+  "line-height-small": $small-line-height,
+  "font-size-base": $base-font-size,
+  "line-height-base": $base-line-height,
+  "font-size-medium": $medium-font-size,
+  "line-height-medium": $medium-line-height,
+  "font-size-large": $large-font-size,
+  "line-height-large": $large-line-height,
+  "font-size-xlarge": $xlarge-font-size,
+  "line-height-xlarge": $xlarge-line-height,
+  "font-size-xxlarge": $xxlarge-font-size,
+  "line-height-xxlarge": $xxlarge-line-height,
+  "font-size-xxxlarge": $xxxlarge-font-size,
+  "line-height-xxxlarge": $xxxlarge-line-height,
+  "font-size-icon-small": $small-font-size-icon,
+  "font-size-icon-base": $base-font-size-icon,
+  "font-size-header-headline": $header-headline
+);

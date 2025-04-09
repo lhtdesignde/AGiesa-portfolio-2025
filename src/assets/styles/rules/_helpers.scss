@@ -1,0 +1,136 @@
+@use "sass:math";
+@use "respond-to";
+//
+// layout helpers
+// --------------------
+//
+
+@mixin clearfix {
+  display: block;
+
+  &:after {
+    visibility: hidden;
+    display: block;
+    clear: both;
+    height: 0;
+    font-size: 0;
+    content: "";
+  }
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin hyphens {
+  hyphens: auto;
+}
+
+@mixin show {
+  display: block !important;
+}
+
+@mixin hide {
+  display: none !important;
+}
+
+@mixin visuallyhidden {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0 none;
+  padding: 0;
+  clip: rect(0 0 0 0);
+}
+
+@mixin hidescrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    appearance: none;
+    display: none;
+  }
+}
+
+@mixin disabled {
+  opacity: .45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+@mixin pagewidth {
+  @include respond-to.respond-to(desktop) {
+    padding-inline: 24px;
+  }
+  @include respond-to.respond-to(tablet-down) {
+    padding-inline: 16px;
+  }
+  & {
+    box-sizing: border-box;
+    max-width: var(--layout-page-width);
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@mixin keyboardfocus {
+  &:focus-visible {
+    outline: 1px solid var(--color-primary);
+    color: var(--color-on-primary-light);
+    background-color: var(--color-primary-light);
+  }
+}
+
+@mixin keyboardfocusText {
+  &:focus-visible {
+    font-weight: var(--font-weight-medium);
+    text-decoration: underline;
+  }
+}
+
+@mixin baseButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: fit-content;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-medium);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  color: var(--color-on-primary);
+  background-color: var(--color-primary);
+  transition: all .15s ease-in-out 0s;
+
+  &:hover,
+  &:focus {
+    border-color: var(--color-on-background);
+    color: var(--color-on-background);
+    background-color: var(--color-primary-light);
+    transition: all .15s ease-in-out 0s;
+  }
+
+  &:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &:focus-visible {
+    outline: 1px solid var(--color-primary);
+  }
+}
+
+//
+// functions that return a value
+//
+@function convertorem($px, $root-font-size: 16) {
+  @return math.div($px, $root-font-size) + rem;
+}

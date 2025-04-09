@@ -1,0 +1,59 @@
+@use "../../assets/styles/rules/respond-to";
+@use "../../assets/styles/rules/helpers";
+
+.bModal {
+  @include respond-to.respond-to(desktop, tablet) {
+    width: 50%;
+    max-width: 670px;
+    margin: 48px auto;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+
+    .modalContent {
+      max-height: calc(100vh - 80px);
+      padding: 32px;
+      padding-block-start: 40px;
+    }
+  }
+
+  @include respond-to.respond-to(mobile) {
+    width: 100%;
+
+    .modalContent {
+      height: 100vh;
+      padding: 48px 32px 0;
+    }
+  }
+
+  & {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-background);
+  }
+
+  .closeButton {
+    @include helpers.keyboardfocus;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-primary-light);
+    }
+  }
+
+  .modalContent {
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+  }
+}

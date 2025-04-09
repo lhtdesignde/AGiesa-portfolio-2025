@@ -1,0 +1,22 @@
+{
+  "pageTitle": "App",
+  "pageTitleSub": "Overview",
+  "loading": "Loading …",
+  "languageSelect": {
+    "eng": "Eng"
+  },
+  "actions": {
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "errorPage": {
+    "headline": "Oops!",
+    "description": "Sorry, an unexpected error has occurred."
+  },
+  "errors": {
+    "errorUnknown": "An unidentified issue occurred"
+  }
+}

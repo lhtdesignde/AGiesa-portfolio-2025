@@ -1,0 +1,9 @@
+@use "../../assets/styles/rules/helpers";
+
+.bLayout {
+  @include helpers.pagewidth;
+
+  & {
+    flex-grow: 1;
+  }
+}

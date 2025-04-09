@@ -1,0 +1,232 @@
+/**
+ * ---------------------------------------------------------------------------------------------------- #
+ *
+ * Extended Reset
+ *
+ */
+
+/**
+ * Global Browser Reset by Eric Meyer
+ */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  /* stylelint-disable-next-line declaration-property-value-allowed-list */
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+picture,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+/**
+ *
+ * Additional Browser Bugfixes
+ *
+ * @section fixes
+ */
+
+/* Prevent iOS text size adjust after orientation change, without disabling user zoom. */
+html {
+  text-size-adjust: 100%;
+}
+
+/* remove extra inner padding on buttons in firefox */
+input::-moz-focus-inner,
+input::-moz-focus-outer,
+button::-moz-focus-inner {
+  border: 0 none;
+  padding: 0;
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  appearance: menulist-button;
+  cursor: pointer;
+}
+
+textarea {
+  overflow: auto;
+  border: 0 none;
+  vertical-align: top;
+}
+
+/* control over ie10/11 input features */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+/* print setup */
+@media print {
+  body {
+    overflow: visible;
+    /* stylelint-disable-next-line declaration-property-value-allowed-list */
+    font-size: 12pt;
+    background: transparent none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+  }
+
+  .print {
+    position: static;
+    left: 0;
+  }
+}

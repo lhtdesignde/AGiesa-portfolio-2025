@@ -1,0 +1,10 @@
+@use "../../assets/styles/rules/helpers";
+
+.bHeader {
+  @include helpers.pagewidth;
+
+  & {
+    margin: 0 auto 40px;
+    padding-block-start: 40px;
+  }
+}

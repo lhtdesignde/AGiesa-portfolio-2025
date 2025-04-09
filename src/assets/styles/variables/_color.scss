@@ -1,0 +1,32 @@
+@use "sass:color";
+
+$color-primary: #24132b !default;
+$color-black: #000 !default;
+$color-white: #f8f5f3ff !default;
+$color-grey-dark: #666 !default;
+$color-red: #da2523 !default;
+$color-red-light: #fbdfe0 !default;
+$color-red-dark: #771615 !default;
+$color-green: #017901 !default;
+$color-green-light: #c6fac6 !default;
+$color-green-dark: #003c00 !default;
+$color-primary-transparent: rgba($color-primary, .05) !default;
+$color-primary-light: #ca5dd9 !default;
+$colors: (
+  "primary": $color-primary,
+  "primary-light": $color-primary-light,
+  "primary-transparent": $color-primary-transparent,
+  "on-primary": $color-white,
+  "on-primary-light": $color-black,
+  "background": $color-white,
+  "on-background": $color-black,
+  "surface": $color-primary-transparent,
+  "error": $color-red,
+  "on-error": $color-white,
+  "error-container": $color-red-light,
+  "on-error-container": $color-red-dark,
+  "border": $color-grey-dark,
+  "success-container": $color-green-light,
+  "on-success-container": $color-green-dark,
+  "transparent": transparent
+);

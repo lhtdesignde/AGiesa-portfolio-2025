@@ -1,0 +1,42 @@
+@use "../rules/respond-to";
+
+.grid {
+  @include respond-to.respond-to(desktop) {
+    gap: 24px;
+
+    &.x5050 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &.x3366 {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    &.x6633 {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  @include respond-to.respond-to(tablet-down) {
+    &.x5050,
+    &.x3366,
+    &.x6633 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  & {
+    display: grid;
+    gap: 16px;
+  }
+
+  .gridItem {
+    overflow: hidden;
+  }
+
+  &.xFirstItemFull {
+    > .gridItem:first-child {
+      grid-column: 1 / -1;
+    }
+  }
+}

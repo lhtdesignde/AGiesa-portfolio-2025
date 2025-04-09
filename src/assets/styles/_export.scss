@@ -1,0 +1,38 @@
+@use "variables/color";
+@use "variables/typography";
+@use "variables/z-layers";
+@use "variables/layouts";
+@use "variables/breakpoints";
+
+// export global variables
+:root {
+  @each $family, $value in typography.$font-family {
+    --font-family-#{$family}: #{$value};
+  }
+
+  @each $size, $value in typography.$typo-sizes {
+    --#{$size}: #{$value};
+  }
+
+  @each $weight, $value in typography.$font-weights {
+    --font-weight-#{$weight}: #{$value};
+  }
+
+  @each $color, $value in color.$colors {
+    --color-#{$color}: #{$value};
+  }
+
+  @each $zlevel, $value in z-layers.$z-layers {
+    --z-#{$zlevel}: #{$value};
+  }
+
+  @each $break, $value in breakpoints.$breakpoints {
+    --break-#{$break}: #{$value};
+  }
+
+  @each $layout, $value in layouts.$layouts {
+    --layout-#{$layout}: #{$value};
+  }
+
+  --font-primary: #{typography.$font-primary};
+}
