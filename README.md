@@ -1,13 +1,17 @@
 # App
 
-This is an application …
-
-Demo:
+This is Annette's personal portfolio website.
+It is built using React and Vite, and it showcases her work and skills as a designer.
 
 ## Installation
 1. Clone the repository
-2. Run `yarn install` to install the dependencies
-3. Run `yarn start` to start the application
+2. Make sure you have `Node.js` installed.
+   a) Use `nvm` to install the latest version; see `.nvmrc` for the version
+3. Enable `yarn`
+   a) Run `corepack enable` to enable `yarn`
+4. Run `yarn install` to install the dependencies
+5. Run `yarn prepare` to prepare the precommit hooks
+5. Run `yarn start` to start the application
 
 ## Available Scripts
 - `yarn start` - Start the application
@@ -21,6 +25,3 @@ Demo:
 - Vite & Vitest
 - Scss
 - i18next
-- Tanstack/react-query
-- Formik
-- Yup

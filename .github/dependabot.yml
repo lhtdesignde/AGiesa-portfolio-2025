@@ -1,0 +1,42 @@
+##############################
+## Dependabot configuration ##
+##############################
+
+#
+# Documentation:
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates
+#
+
+version: 2
+updates:
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    ignore:
+      # For all packages, ignore all patch updates
+      - dependency-name: "*"
+        update-types: [ "version-update:semver-patch" ]
+    schedule:
+      interval: "monthly"
+    pull-request-branch-name:
+      # Separate sections of the branch name with a hyphen
+      # for example, `dependabot-npm_and_yarn-next_js-acorn-6.4.1`
+      separator: "-"
+    # Add reviewers
+    reviewers:
+      - "lhtdesignde"
+
+  # Maintain dependencies for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    # Disable version updates for dependencies, only require security updates
+    open-pull-requests-limit: 0
+    schedule:
+      interval: "weekly"
+    pull-request-branch-name:
+      # Separate sections of the branch name with a hyphen
+      # for example, `dependabot-npm_and_yarn-next_js-acorn-6.4.1`
+      separator: "-"
+    # Add reviewers
+    reviewers:
+      - "lhtdesignde"
